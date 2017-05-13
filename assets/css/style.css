@@ -1,7 +1,52 @@
+body {
+	background: #FCFAF5;
+}
+
 .jumbotron {
-	background-color: #428bca
+	background: #49575D;
 }
 
 .jumbotron h1 {
-	color:white;
+	color: #FCFAF5;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+h2, p {
+	color: #49575D;
+}
+
+#pic {
+	width: 320px;
+	height: 240px;
+}
+
+.col-md-2 {
+	vertical-align: center;
+}
+
+h3 {
+  padding: 0;
+}
+
+#game {
+	text-align: center;
+}
+
+#word {
+	font-size: 36px;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+}
+
+#guess {
+	font-size: 24px;
+	text-align: center;
+}
+button {
+    position:relative;
+    left: 40%;
 }
