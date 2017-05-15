@@ -51,6 +51,7 @@ document.onkeyup = function(event) {
                     document.onkeyup = function(event) {
                         // Determines which key was pressed
                         var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+                        var pos = guessedLetter.indexOf(userGuess);
 
                         for (var a=0;a<word.length;a++){
                           if (word[a] === userGuess){
@@ -61,6 +62,13 @@ document.onkeyup = function(event) {
 
                         while (correctGuess >= 0){
                           document.querySelector("#word").innerHTML = underScores.join("");
+                          if (pos === -1){
+                            guessedLetter.push(userGuess);
+
+                          }
+
+
+
                           break;
 
                         }
@@ -68,19 +76,19 @@ document.onkeyup = function(event) {
 
 
 
-
-
-
-
-
-
-                         // Displays the letters the user has guessed thus far.
+    // Displays the letters the user has guessed thus far.
                         var html = "<p>Letters already guessed: </p>" +
                                     "<p><strong><span style='color:#ff0000'>" + guessedLetter + "</span><strong></p>";
                                 document.querySelector("#guess").innerHTML = html;
 
 }
-};
+
+
+
+
+
+                     
+}
 
 
 
