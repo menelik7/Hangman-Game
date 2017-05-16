@@ -4,7 +4,8 @@ var win = 0;
 var loss = 0;
 var underScores = [];
 var guessedLetter = [];
-
+var pics = 6;
+var winSound = document.getElementById("sound");
 
 //Initial display.
 var html = "<p>Win to display new images</p>";
@@ -21,7 +22,7 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
         document.querySelector("#instructions").innerHTML = html;
 
         document.getElementById("reset").onclick = function() {myFunction()};
-        function myFunction() {
+        function myFunction(){
               var word = options[Math.floor(Math.random() * options.length)];
               var chance = 12;
               var correctGuess = 0;
@@ -31,8 +32,8 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
                          "<p><strong><span style='color:#ff0000'>...</span><strong></p>";
                       document.querySelector("#guess").innerHTML = html;
 
-              for(i=0; i<word.length; i++) {
-                  underScores[i] = "_ ";
+              for(i=0; i<word.length; i++){
+                underScores[i] = "_ ";
               }
 
               var html = "<p></p>";
@@ -68,6 +69,7 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
                             if ((word[a] === userGuess) && (pos2 === -1)){
                               underScores[a] = userGuess;
                               correctGuess++;
+                              winSound.play();
                             }
                           }
 
@@ -107,10 +109,22 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
                                             document.querySelector("#game").innerHTML = html;
                                             document.querySelector("#intro").innerHTML = ("Congratulations!  You win!")
                                             document.querySelector("#reset").innerHTML = ("Keep playing");
-                              }
 
-                              if (chance === 1){
-                                document.querySelector("#intro").innerHTML = ("You have one guess remaining!");
+                                            if (win === 1){
+                                            document.getElementById('pic').src = "assets/images/2.jpg";
+                                            }
+                                            else if (win === 2){
+                                            document.getElementById('pic').src = "assets/images/3.jpg";
+                                            }
+                                            else if (win === 3){
+                                            document.getElementById('pic').src = "assets/images/4.jpg";
+                                            }
+                                            else if (win === 4){
+                                            document.getElementById('pic').src = "assets/images/5.jpg";
+                                            }
+                                            else if (win === 5){
+                                            document.getElementById('pic').src = "assets/images/6.jpg";
+                                            }
                               }
                            
 
@@ -130,8 +144,7 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
                                                  "<p><strong>Correct guesses: " + correctGuess + "</strong></p>" +
                                                  "<p><strong>Word length: " + word.length + "</strong></p>";
                                             document.querySelector("#game").innerHTML = html;
-                              }
-                              
+                              }   
                       }
                        
 }
