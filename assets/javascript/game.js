@@ -125,6 +125,12 @@ var html = "<p>Would you like to play a word game?  The objective is to uncover 
                                             else if (win === 5){
                                             document.getElementById('pic').src = "assets/images/6.jpg";
                                             }
+                                            else if (win === 6){
+                                            document.getElementById('pic').src = "assets/images/7.jpg";
+                                            }
+                                            else if (win === 7){
+                                            document.getElementById('pic').src = "assets/images/8.jpg";
+                                            }
                               }
                            
 
