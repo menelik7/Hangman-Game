@@ -123,7 +123,7 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                         document.getElementById('pic').src = "assets/images/7.jpg";
                                         }
                                     else if (win === 7){
-                                    document.getElementById('pic').src = "assets/images/8.jpg";
+                                    document.getElementById('pic').src = "http://www.grittv.com/wp-content/uploads/2014/08/Grit_Bluesky.png";
                                     }
                               }
                            
