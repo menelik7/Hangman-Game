@@ -76,7 +76,7 @@ document.getElementById("reset").onclick = function() {myFunction()};
 
                             //Identify and store all correct letters and update variables when conditions are met.
                             for (var a=0;a<word.length;a++){
-                                if ((word[a] === userGuess) && (pos2 === -1)){
+                                if ((word[a] === userGuess) && (pos2 === -1) && (chance > 0)){
                                     underScores[a] = userGuess;
                                     correctGuess++;
                                     winSound.play();//Goofy sound :-)
@@ -84,11 +84,11 @@ document.getElementById("reset").onclick = function() {myFunction()};
                             }
 
                             //Insert correct guesses.
-                            if (correctGuess <= word.length){
+                            if ((correctGuess <= word.length) && (chance >0)){
                                 document.querySelector("#word").innerHTML = underScores.join(" ");
 
                                 //insert incorrect guesses in the guessedLetters div and update variables accordingly.
-                                if (pos === -1){
+                                if ((pos === -1) && (chance >=0)){
                                     guessedLetter.push(userGuess);
                                     chance--;
 
@@ -148,17 +148,17 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                     }
                                     else if (win === 7){
                                     document.getElementById('pic').src = "http://www.grittv.com/wp-content/uploads/2014/08/Grit_Bluesky.png";
-                                    }
+                                    } 
                             }
                              
 
                             //Update displays and variables at loss.
-                            if ((chance <= 0) && (correctGuess < word.length)){
+                            if ((chance == 0) && (correctGuess < word.length)){
 
                                 loss++;
 
-                                var html = "<p>Letters already guessed: </p>" +
-                                           "<p><strong><span style='color:#ff0000'>" + guessedLetter + "</span><strong></p>";
+                                var html = "<p></p>" +
+                                           "<p><strong><span style='color:#ff0000'>...</span><strong></p>";
                                             document.querySelector("#guess").innerHTML = html;
 
                                             document.querySelector("#game").innerHTML = html;
@@ -168,13 +168,13 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                      
                                 var html = "<p><strong>wins: " + win + "</strong></p>" +
                                            "<p><strong>losses: " + loss + "</strong></p>" +
-                                           "<p><strong>Guesses remaining: " + chance + "</strong></p>" +
+                                           "<p><strong>Guesses remaining: " + 0 + "</strong></p>" +
                                            "<p><strong>Correct guesses: " + correctGuess + "</strong></p>" +
                                            "<p><strong>Word length: " + word.length + "</strong></p>";
-                                           document.querySelector("#game").innerHTML = html;    
+                                           document.querySelector("#game").innerHTML = html;   
                             }   
                         }
-                       
+
     }
 
 
