@@ -170,7 +170,8 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                            "<p><strong>losses: " + loss + "</strong></p>" +
                                            "<p><strong>Guesses remaining: " + chance + "</strong></p>" +
                                            "<p><strong>Correct guesses: " + correctGuess + "</strong></p>" +
-                                           "<p><strong>Word length: " + word.length + "</strong></p>";    
+                                           "<p><strong>Word length: " + word.length + "</strong></p>";
+                                           document.querySelector("#game").innerHTML = html;    
                             }   
                         }
                        
