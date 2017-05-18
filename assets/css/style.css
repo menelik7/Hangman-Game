@@ -4,12 +4,12 @@ body {
 }
 
 .jumbotron {
-	background: #49575D;
+	background: #FCFAF5;
 	height: 140px;
 }
 
 .jumbotron h1 {
-	color: #FCFAF5;
+	color: #6F5545;
 	text-align: center;
 	margin: auto;
 }

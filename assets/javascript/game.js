@@ -19,14 +19,14 @@ var html = "<p>Welcome!</p>";
 
 //Instructions.
 var html = "<p>Would you like to play a word game?  The objective is to uncover the hidden word by guessing the correct letters.  If you decide to play, refer to the Score box for important stats.<p>" +
-           "<p><strong><center><span style='color:#ff0000'>Click the button below to start!</span></center></strong></p>";
+           "<p><strong><center><span style='color:green'>Click the button below to start!</span></center></strong></p>";
             document.querySelector("#instructions").innerHTML = html;
 
 
 //Initiate the game on click.  This button can also be used by the player to restart at will, keep playing after a win, or try again after a loss.
-document.getElementById("reset").onclick = function() {myFunction()};
+document.getElementById("reset").onclick = function() { myFunction() };
 
-        function myFunction(){
+function myFunction(){
             //Generates random words from the options array.
             var word = options[Math.floor(Math.random() * options.length)];
 
@@ -109,6 +109,7 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                 }
                             }
 
+
                             //Update displays and corresponding variables when letter has been uncovered.
                             if (correctGuess === word.length) {
 
@@ -127,33 +128,33 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                             document.querySelector("#intro").innerHTML = ("Congratulations!  You win!")
                                             document.querySelector("#reset").innerHTML = ("Keep playing");
 
-                                    //Update pictures accoring to the nunmber of wins (place-holder for now to be upgraded to more interractive features.
-                                    if (win === 1){
+                                //Update pictures accoring to the nunmber of wins (place-holder for now to be upgraded to more interractive features.
+                                if (win === 1){
                                     document.getElementById('pic').src = "assets/images/2.jpg";
-                                    }
-                                    else if (win === 2){
+                                }
+                                else if (win === 2){
                                     document.getElementById('pic').src = "assets/images/3.jpg";
-                                    }
-                                    else if (win === 3){
+                                }
+                                else if (win === 3){
                                     document.getElementById('pic').src = "assets/images/4.jpg";
-                                    }
-                                    else if (win === 4){
+                                }
+                                else if (win === 4){
                                     document.getElementById('pic').src = "assets/images/5.jpg";
-                                    }
-                                    else if (win === 5){
+                                }
+                                else if (win === 5){
                                     document.getElementById('pic').src = "assets/images/6.jpg";
-                                    }
-                                    else if (win === 6){
+                                }
+                                else if (win === 6){
                                     document.getElementById('pic').src = "assets/images/7.jpg";
-                                    }
-                                    else if (win === 7){
+                                }
+                                else if (win === 7){
                                     document.getElementById('pic').src = "http://www.grittv.com/wp-content/uploads/2014/08/Grit_Bluesky.png";
-                                    } 
+                                } 
                             }
                              
 
                             //Update displays and variables at loss.
-                            if ((chance == 0) && (correctGuess < word.length)){
+                            if ((chance === 0) && (correctGuess < word.length)){
 
                                 loss++;
 
@@ -168,14 +169,19 @@ document.getElementById("reset").onclick = function() {myFunction()};
                                      
                                 var html = "<p><strong>wins: " + win + "</strong></p>" +
                                            "<p><strong>losses: " + loss + "</strong></p>" +
-                                           "<p><strong>Guesses remaining: " + 0 + "</strong></p>" +
+                                           "<p><strong>Guesses remaining: " + chance + "</strong></p>" +
                                            "<p><strong>Correct guesses: " + correctGuess + "</strong></p>" +
                                            "<p><strong>Word length: " + word.length + "</strong></p>";
-                                           document.querySelector("#game").innerHTML = html;   
+                                           document.querySelector("#game").innerHTML = html;  
+                                            
+                                document.onkeyup = function (event) {
+                                    return;
+                                }
                             }   
+
                         }
 
-    }
+        }
 
 
 
