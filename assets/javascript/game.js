@@ -127,6 +127,10 @@ function myFunction(){
                                             document.querySelector("#game").innerHTML = html;
                                             document.querySelector("#intro").innerHTML = ("Congratulations!  You win!")
                                             document.querySelector("#reset").innerHTML = ("Keep playing");
+                                            
+                                document.onkeyup = function (event) {
+                                    return;
+                                }
 
                                 //Update pictures accoring to the nunmber of wins (place-holder for now to be upgraded to more interractive features.
                                 if (win === 1){
