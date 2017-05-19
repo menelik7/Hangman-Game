@@ -12,9 +12,9 @@
 
 
 <body>
-	<div class="jumbotron bg-primary text-center">
+	<header>
 		<h1>HANGMAN</h1>
-	</div>
+	</header>
 
 	<div class="container">
 		<div class="row">
@@ -23,26 +23,26 @@
 				<audio id="sound"><source src="assets/soundeffects/1.wav"></audio>
 			</div>
 
-			<div class="panel panel-default col-md-4">
-				<h2 class="panel title" id="intro"></h2>
+			<div class="col-md-4">
+				<h3 id="intro">Welcome</h3>
 				<div id="instructions"></div>
 				<div id=word></div>
 				<br>
 				<div id=guess></div>
+				<div id="button">
 				<button id="reset" class="btn btn-success btn-lg">Start</button>
+				</div>
 			</div>
 
-			<div class="panel panel-default col-md-2">	
-				<div class="page-heading">
-				<h3 class="panel title">Score</h3>
-				</div>
+			<div class="col-md-2">	
+				<h3 id="score">Score</h3>
 				<div id="game">
 			    </div>
 			</div>
 
-			<div class="panel panel-default col-md-4">
-	        	<div class="page-header" id="pictures">
-				<h2 class="panel title" id="place"></h2>
+			<div class="col-md-4">
+				<h3 id="place">Win to display new images</h3>
+				<div id="pictures">
 				<img id="pic" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRQwOvFae0YdJHvv7IhgF70gdcO1moNkt-_Zobktff5pTVyGJ0rA" alt="hangman">
 				</div>
 			</div>
@@ -55,8 +55,9 @@
 	</div>
 
 	<footer>
-	    <div class="container">
+	    <div class="footer">
 	      Copyright &copy; 2017 Menelik Tefera
+	      <!--<br>Background images courtesy of "Subtle Patterns"-->
 	    </div>
     </footer>
 
