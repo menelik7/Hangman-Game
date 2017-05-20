@@ -1,5 +1,5 @@
 //Declare Global Variables.
-var options = ["discover", "dream", "stretch", "risk", "explore", "dive", "dance", "climb", "melt", "motor", "child", "thorn", "witch", "craft", "bankrupt", "hammer", "technique", "tennis", "java", "computer", "dell", "microsoft", "excel", "health", "building", "jump", "lion", "camaro", "maxima", "love", "patience", "program", "justice", "knee", "attitude", "fiesty", "kind", "karate", "football", "ikea", "horse", "tesla", "electric", "inform", "process", "algorithm", "function", "disable", "duplicate", "extract", "resize", "represent", "deny", "accept", "reject", "depose", "flight", "company", "tycoon", "empire", "wealth", "money", "greed", "happiness", "success", "mastery", "construct", "manager"];
+var options = ["discover", "dream", "stretch", "risk", "explore", "dive", "dance", "climb", "melt", "motor", "child", "thorn", "witch", "craft", "bankrupt", "hammer", "technique", "tennis", "java", "computer", "declare", "microsoft", "excel", "health", "building", "jump", "lion", "camaro", "maxima", "love", "patience", "program", "justice", "knee", "attitude", "fiesty", "kind", "karate", "football", "ikea", "horse", "tesla", "electric", "inform", "process", "algorithm", "function", "disable", "duplicate", "extract", "resize", "represent", "deny", "accept", "reject", "depose", "flight", "company", "tycoon", "empire", "wealth", "money", "greed", "happiness", "success", "mastery", "construct", "manager"];
 var tracker = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var win = 0;
 var loss = 0;
@@ -36,7 +36,7 @@ function myFunction(){
             }
 
             //Update displays once the player initiates the game.
-            var html = "<p>Pick a letter!</p>";
+            var html = "<p>Pick a letter</p>";
                         document.querySelector("#intro").innerHTML = html;
                         document.querySelector("#word").innerHTML = underScores.join(" ");//Insert underscores in place of letters.
             
@@ -45,7 +45,13 @@ function myFunction(){
                         document.querySelector("#guess").innerHTML = html;
             
             var html = "<p></p>";
-                        document.querySelector("#instructions").innerHTML = html;             
+                        document.querySelector("#instructions").innerHTML = html;
+
+            var html = "<p>Score</p>";
+                        document.querySelector("#score").innerHTML = html;
+
+            var html = "<p>Win to display new images</p>";
+                        document.querySelector("#place").innerHTML = html;             
             
             var html = "<p><strong>wins: " + win + "</strong></p>" +
                        "<p><strong>losses: " + loss + "</strong></p>" +
@@ -119,7 +125,7 @@ function myFunction(){
                                            "<p><strong>Correct guesses: " + correctGuess + "</strong></p>" +
                                            "<p><strong>Word length: " + word.length + "</strong></p>";
                                             document.querySelector("#game").innerHTML = html;
-                                            document.querySelector("#intro").innerHTML = ("Congratulations!  You win!")
+                                            document.querySelector("#intro").innerHTML = ("<strong><span style='color:#4D9C2D'>Well done!</span></strong>")
                                             document.querySelector("#reset").innerHTML = ("Keep playing");
                                             
                                 document.onkeyup = function (event) {
@@ -128,25 +134,34 @@ function myFunction(){
 
                                 //Update pictures accoring to the nunmber of wins (place-holder for now to be upgraded to more interractive features.
                                 if (win === 1){
-                                    document.getElementById('pic').src = "assets/images/2.jpg";
+                                    document.getElementById('pic').src = "https://media3.giphy.com/media/f1NTdkdbG4XzW/200.webp#41-grid3";
                                 }
                                 else if (win === 2){
                                     document.getElementById('pic').src = "assets/images/3.jpg";
                                 }
                                 else if (win === 3){
-                                    document.getElementById('pic').src = "assets/images/4.jpg";
+                                    document.getElementById('pic').src = "https://media1.giphy.com/media/bhSi84uFsp66s/200.webp?response_id=591fa1362979e7b8481ecd8e#0-grid1";
                                 }
                                 else if (win === 4){
-                                    document.getElementById('pic').src = "assets/images/5.jpg";
+                                    document.getElementById('pic').src = "https://media0.giphy.com/media/1EIDdj8Xl9LWg/200w_s.gif?response_id=591fa57f04c2a71b8d71dd2e#5-grid1";
                                 }
                                 else if (win === 5){
-                                    document.getElementById('pic').src = "assets/images/6.jpg";
+                                    document.getElementById('pic').src = "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FdRGWII2nDN1D2%2Fgiphy.gif";
                                 }
                                 else if (win === 6){
-                                    document.getElementById('pic').src = "assets/images/7.jpg";
+                                    document.getElementById('pic').src = "https://media4.giphy.com/media/6C9CMGMFtzzbO/200w.webp#3-grid1";
                                 }
                                 else if (win === 7){
                                     document.getElementById('pic').src = "http://www.grittv.com/wp-content/uploads/2014/08/Grit_Bluesky.png";
+                                }
+                                else if (win === 8){
+                                    document.getElementById('pic').src = "https://media1.giphy.com/media/9n5UIlRppk91e/200w.webp#122-grid3";
+                                }
+                                else if (win === 9){
+                                    document.getElementById('pic').src = "https://media4.giphy.com/media/3oKIPCSX4UHmuS41TG/200.webp#124-grid3";
+                                }
+                                else if (win === 10){
+                                    document.getElementById('pic').src = "https://media3.giphy.com/media/B8xqfsYqf8gX6/200.webp#48-grid1";
                                 } 
                             }
                              
@@ -162,7 +177,7 @@ function myFunction(){
 
                                             document.querySelector("#game").innerHTML = html;
                                             document.querySelector("#intro").innerHTML = ("Oops!  You ran out of guesses!");
-                                            document.querySelector("#word").innerHTML = ('The word was "' + word.toUpperCase() + '"');
+                                            document.querySelector("#word").innerHTML = ('The word was "' + word + '"');
                                             document.querySelector("#reset").innerHTML = ("Try again");
                                      
                                 var html = "<p><strong>wins: " + win + "</strong></p>" +
@@ -179,7 +194,7 @@ function myFunction(){
 
                         }
 
-        }
+}
 
 
 
