@@ -8,10 +8,6 @@ var guessedLetter = [];
 var winSound = document.getElementById("sound");
 
 //Home screen display.
-var html =  "<p>Pending...</p>";
-            document.querySelector("#game").innerHTML = html;
-
-//Instructions.
 var html = "<p>Would you like to play a word game?  The objective is to uncover the hidden word by guessing the correct letters.  If you decide to play, refer to the Score box for important stats.<p>" +
            "<p><strong><center><span style='color:#4D9C2D'>Click the button below to start!</span></center></strong></p>";
             document.querySelector("#instructions").innerHTML = html;

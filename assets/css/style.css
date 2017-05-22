@@ -7,9 +7,9 @@ body {
 /*Header*/
 header {
 	background: url("../images/crossword.png");
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	text-align: center;
-    border-bottom-style: inset;
+	border-bottom-style: inset;
     border-bottom-width: 2px;
 }
 
@@ -32,6 +32,10 @@ h1, h3 {
 }
 
 /*Main content*/
+.container {
+	padding-bottom: 40px;
+}
+
 #word {
 	font-size: 36px;
 	font-weight: bold;
@@ -51,7 +55,7 @@ h1, h3 {
 
 #connect {
   width: 100%;
-  padding: 10px 60px 0 60px;
+  padding: 10px 60px 20px 60px;
   margin-top: 30px;
 }
 
@@ -67,7 +71,12 @@ h1, h3 {
   height: 62px;
 }
 
-
+/*#intro,
+#score,
+#place {
+	padding: 10px 0 10px 0;
+box-shadow: 3px 3px 12px #ccc;
+}*/
 
 /*Score Box*/
 #instructions,
