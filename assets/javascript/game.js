@@ -3,12 +3,10 @@ var options = ["discover", "dream", "stretch", "risk", "explore", "dive", "dance
 var tracker = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var win = 0;
 var loss = 0;
-var underScores = [];
-var guessedLetter = [];
 var winSound = document.getElementById("sound");
 
 //Home screen display.
-var html = "<p>Would you like to play a word game?  The objective is to uncover the hidden word by guessing the correct letters.  If you decide to play, refer to the Score box for important stats.<p>" +
+var html = "<p>Would you like to play a word game?  The objective is to uncover the hidden word by guessing the correct letters.  If you decide to play, refer to the Score box for important stats.</p>" +
            "<p><strong><center><span style='color:#4D9C2D'>Click the button below to start!</span></center></strong></p>";
             document.querySelector("#instructions").innerHTML = html;
 
@@ -28,7 +26,7 @@ function myFunction(){
 
             //Generate underscores matching the number of letters in the random hidden word.
             for(i=0; i<word.length; i++){
-              underScores[i] = "_";
+              underScores[i] = "_ ";
             }
 
             //Update displays once the player initiates the game.
@@ -76,12 +74,12 @@ function myFunction(){
                                     underScores[a] = userGuess;
                                     correctGuess++;
                                     winSound.play();//Goofy sound :-)
+                                    document.querySelector("#word").innerHTML = underScores.join("");
                                 }
                             }
 
                             //Insert correct guesses.
                             if ((correctGuess <= word.length) && (chance >0)){
-                                document.querySelector("#word").innerHTML = underScores.join(" ");
 
                                 //insert incorrect guesses in the guessedLetters div and update variables accordingly.
                                 if ((pos === -1) && (chance >=0)){
@@ -139,7 +137,7 @@ function myFunction(){
                                     document.getElementById('pic').src = "https://media1.giphy.com/media/bhSi84uFsp66s/200.webp?response_id=591fa1362979e7b8481ecd8e#0-grid1";
                                 }
                                 else if (win === 4){
-                                    document.getElementById('pic').src = "https://media0.giphy.com/media/1EIDdj8Xl9LWg/200w_s.gif?response_id=591fa57f04c2a71b8d71dd2e#5-grid1";
+                                    document.getElementById('pic').src = "http://www.ohmagif.com/wp-content/uploads/2014/07/epic-indian-dude-reading-newspaper-while-driving-a-motorcycle.gif";
                                 }
                                 else if (win === 5){
                                     document.getElementById('pic').src = "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FdRGWII2nDN1D2%2Fgiphy.gif";

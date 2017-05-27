@@ -28,7 +28,12 @@ h1, h3 {
 
 .col-md-4, .col-md-2 {
 	margin-top: 20px;
+	margin-bottom: 100px;
 	color: #3D3F42;
+}
+
+.col-md-2 {
+	margin-right: 50px;
 }
 
 /*Main content*/
