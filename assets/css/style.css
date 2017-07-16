@@ -2,6 +2,7 @@
 body {
 	background: #ffffff;
 	scroll-behavior: auto;
+	background: url("../images/confectionary.png");
 }
 
 /*Header*/
